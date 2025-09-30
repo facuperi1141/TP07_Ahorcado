@@ -10,6 +10,7 @@ namespace TP07_Ahorcado
         private List<Usuario> jugadores = new List<Usuario>();
         [JsonProperty]
         private Usuario jugadorActual;
+        public string palabraActual {get; private set;}
 
         private void llenarListaPalabras()
         {
@@ -65,6 +66,7 @@ namespace TP07_Ahorcado
         public void InicializarJuego(string usuario, int dificultad)
         {
             jugadorActual = new Usuario(usuario, 0);
+            palabraActual = CargarPalabra(dificultad)
         }
         public string CargarPalabra(int dificultad)
         {
